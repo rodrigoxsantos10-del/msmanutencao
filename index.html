@@ -1,69 +1,69 @@
-Aqui está o código HTML/CSS/JS para uma landing page de alta conversão para a MS Manutenção, seguindo suas diretrizes visuais e de estrutura.
+Aqui está o código HTML/CSS completo para uma landing page profissional e focada em celular para a MS Manutenção, com botões de contato direto e design técnico.
 ```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>MS Manutenção | Elétrica Predial, Comercial e Industrial em Luziânia-GO</title>
-    <!-- Tailwind CSS CDN + FontAwesome + Google Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>MS Manutenção | Residencial e Industrial - Luziânia/GO</title>
+    <!-- Tailwind CSS + Font Awesome + Google Fonts para visual moderno -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Custom: override Tailwind for extra smoothness and button animations -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         body {
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
             background-color: #ffffff;
+            scroll-behavior: smooth;
         }
-        /* Custom orange / dark theme touches */
-        .btn-orange {
-            background-color: #F97316; /* Tailwind orange-500 vibrante */
-            transition: all 0.2s ease-in-out;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        /* Cores personalizadas: Laranja vibrante #FF6600 e cinza escuro refinado */
+        .bg-orange-ms {
+            background-color: #FF6600;
         }
-        .btn-orange:hover {
-            background-color: #EA580C; /* orange-600 */
-            transform: scale(1.02);
-            box-shadow: 0 8px 18px rgba(249,115,22,0.25);
+        .text-orange-ms {
+            color: #FF6600;
         }
-        .btn-outline-orange {
-            border: 2px solid #F97316;
-            color: #F97316;
+        .border-orange-ms {
+            border-color: #FF6600;
+        }
+        .hover\:bg-orange-700:hover {
+            background-color: #E55A00;
+        }
+        .btn-orange-custom {
+            background-color: #FF6600;
             transition: all 0.2s ease;
-            background: transparent;
+            box-shadow: 0 4px 10px rgba(255, 102, 0, 0.2);
         }
-        .btn-outline-orange:hover {
-            background-color: #F97316;
-            color: white;
+        .btn-orange-custom:hover {
+            background-color: #E05A00;
             transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.3);
         }
-        .card-hover {
+        .btn-outline-ms {
+            border: 2px solid #FF6600;
+            color: #FF6600;
+            background: transparent;
+            transition: all 0.2s;
+        }
+        .btn-outline-ms:hover {
+            background-color: #FF6600;
+            color: white;
+        }
+        .card-service {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: #ffffff;
+            border-radius: 1.25rem;
         }
-        .card-hover:hover {
+        .card-service:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.15);
-        }
-        /* sticky header */
-        .sticky-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(12px);
-            background-color: rgba(18, 18, 18, 0.92);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
         }
         .whatsapp-float {
             position: fixed;
             bottom: 24px;
-            right: 24px;
+            right: 20px;
             z-index: 99;
             background-color: #25D366;
             width: 58px;
@@ -72,282 +72,263 @@ Aqui está o código HTML/CSS/JS para uma landing page de alta conversão para a
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
             transition: 0.2s;
             cursor: pointer;
         }
         .whatsapp-float:hover {
-            transform: scale(1.07);
+            transform: scale(1.08);
             background-color: #128C7E;
         }
-        /* responsividade extra para cards */
+        /* foco em celular: ajustes de espaçamento e typografia */
         @media (max-width: 640px) {
-            .hero-title {
-                font-size: 2rem;
-                line-height: 1.2;
+            .hero-title-mobile {
+                font-size: 1.9rem;
+                line-height: 1.25;
             }
-            .btn-group {
+            .btn-mobile-stack {
                 flex-direction: column;
-                gap: 12px;
                 width: 100%;
             }
-            .btn-group a {
-                text-align: center;
+            .btn-mobile-stack a {
                 justify-content: center;
+                width: 100%;
             }
         }
-        /* faq subtle border */
-        .border-accent {
-            border-left: 4px solid #F97316;
-        }
         .bg-industrial-pattern {
-            background-image: radial-gradient(circle at 10% 20%, rgba(249,115,22,0.02) 2%, transparent 2.5%);
+            background-image: radial-gradient(circle at 10% 20%, rgba(255,102,0,0.03) 2%, transparent 2.5%);
             background-size: 28px 28px;
+        }
+        .shadow-elevated {
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+        }
+        .border-left-accent {
+            border-left: 4px solid #FF6600;
         }
     </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="text-gray-800 antialiased">
 
-    <!-- CABEÇALHO STICKY com nome + botão ligar -->
-    <header class="sticky-header w-full py-3 px-5 md:px-10 flex justify-between items-center border-b border-gray-800/20 shadow-sm">
-        <div class="flex items-center gap-2">
-            <i class="fas fa-bolt text-orange-500 text-xl"></i>
-            <h1 class="text-white font-bold text-lg md:text-xl tracking-tight">MS MANUTENÇÃO</h1>
-            <span class="hidden sm:inline-block text-xs text-orange-300 bg-gray-800/60 px-2 py-0.5 rounded-full ml-2">Residencial • Industrial</span>
+    <!-- BANNER PRINCIPAL COM NOME DA EMPRESA E BOTÕES DE CONTATO -->
+    <section class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white px-5 pt-12 pb-16 overflow-hidden">
+        <!-- detalhes decorativos industriais -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <i class="fas fa-bolt text-8xl absolute top-5 left-5 text-orange-500"></i>
+            <i class="fas fa-microchip text-7xl absolute bottom-5 right-5 text-orange-400"></i>
+            <i class="fas fa-charging-station text-6xl absolute top-1/2 left-1/2 transform -translate-x-1/2 opacity-20"></i>
         </div>
-        <a href="tel:61993130570" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-5 rounded-full flex items-center gap-2 transition shadow-md text-sm md:text-base">
-            <i class="fas fa-phone-alt"></i> LIGAR AGORA
-        </a>
-    </header>
-
-    <!-- SEÇÃO HERO PRINCIPAL -->
-    <section class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-16 md:py-24 px-5 overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <i class="fas fa-microchip text-9xl absolute bottom-0 right-0 text-orange-400"></i>
-            <i class="fas fa-bolt text-8xl absolute top-10 left-5 text-orange-500"></i>
-        </div>
-        <div class="max-w-6xl mx-auto relative z-10">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-10">
-                <div class="flex-1 text-center md:text-left">
-                    <div class="inline-block bg-orange-500/20 text-orange-300 rounded-full px-3 py-1 text-xs font-medium mb-4 backdrop-blur-sm">
-                        <i class="fas fa-certificate mr-1"></i> Especialistas em normas NR-10 e NR-12
-                    </div>
-                    <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-                        Manutenção Elétrica <span class="text-orange-500">Predial, Comercial</span> e Industrial
-                    </h1>
-                    <p class="text-gray-300 text-lg md:text-xl mt-6 max-w-2xl">
-                        Atendimento especializado em <strong class="text-white">Luziânia-GO</strong> com foco em segurança, normas técnicas e máxima confiabilidade. Soluções elétricas que garantem performance e tranquilidade.
-                    </p>
-                    <!-- GRUPO BOTÕES PRINCIPAIS: LIGAÇÃO DIRETA + WHATSAPP -->
-                    <div class="btn-group flex flex-col sm:flex-row gap-5 mt-8">
-                        <a href="tel:61993130570" class="btn-orange text-white font-bold py-3 px-8 rounded-xl text-center flex items-center justify-center gap-3 text-lg shadow-lg transition">
-                            <i class="fas fa-phone-alt fa-fw"></i> LIGAÇÃO DIRETA
-                        </a>
-                        <a href="https://wa.me/5561993130570?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20manutenção%20elétrica." target="_blank" class="btn-outline-orange font-bold py-3 px-8 rounded-xl text-center flex items-center justify-center gap-3 text-lg transition bg-white/5 backdrop-blur-sm">
-                            <i class="fab fa-whatsapp fa-fw text-green-400"></i> WHATSAPP
-                        </a>
-                    </div>
-                    <div class="mt-8 flex flex-wrap gap-4 text-sm text-gray-400 items-center justify-center md:justify-start">
-                        <span><i class="fas fa-check-circle text-orange-500 mr-1"></i> Atendimento 24h emergência</span>
-                        <span><i class="fas fa-file-alt text-orange-500 mr-1"></i> Laudo Técnico</span>
-                        <span><i class="fas fa-hard-hat text-orange-500 mr-1"></i> Equipe CREA</span>
-                    </div>
-                </div>
-                <div class="flex-1 flex justify-center">
-                    <div class="bg-gray-800/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 w-full max-w-xs shadow-2xl">
-                        <i class="fas fa-bolt text-orange-500 text-5xl mb-3 block text-center"></i>
-                        <h3 class="text-xl font-bold text-center mb-2">Segurança e Eficiência</h3>
-                        <p class="text-gray-300 text-sm text-center">Projetos e manutenções que respeitam as rigorosas normas técnicas e garantem a continuidade operacional da sua empresa ou residência.</p>
-                        <div class="mt-4 flex justify-center">
-                            <i class="fas fa-star text-yellow-500"></i><i class="fas fa-star text-yellow-500"></i><i class="fas fa-star text-yellow-500"></i><i class="fas fa-star text-yellow-500"></i><i class="fas fa-star text-yellow-500"></i>
-                            <span class="text-xs text-gray-400 ml-2">+100 clientes satisfeitos</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="max-w-5xl mx-auto relative z-10 text-center">
+            <!-- Selo de qualidade/responsabilidade -->
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 mb-5 border border-white/20">
+                <i class="fas fa-shield-alt text-orange-500 text-sm"></i>
+                <span class="text-xs font-medium text-gray-200">Manutencao Eletrica | CREA ativo</span>
+            </div>
+            <!-- Nome da empresa em destaque -->
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                <span class="text-white">MS Manutenção</span><br>
+                <span class="text-orange-ms">Residencial e Industrial</span>
+            </h1>
+            <p class="text-gray-300 text-base md:text-lg max-w-2xl mx-auto mt-4">
+                <i class="fas fa-map-marker-alt text-orange-500 mr-1"></i> Luziânia - GO 
+                <span class="mx-2">|</span> 
+                <i class="fas fa-tools text-orange-500 mr-1"></i> Normas NR-10 e NR-12
+            </p>
+            <p class="text-gray-200 text-sm md:text-base max-w-xl mx-auto mt-3 font-medium">
+                Soluções elétricas de alta performance para Residencia, comércios, condomínios e indústrias.
+            </p>
+            
+            <!-- GRUPO DE BOTÕES: ligar agora + botão WhatsApp central (além do flutuante, com estilo consistente) -->
+            <div class="flex flex-col sm:flex-row btn-mobile-stack gap-5 justify-center mt-8">
+                <!-- Botão Liga Agora (telefone em destaque) -->
+                <a href="tel:61981214135" class="btn-orange-custom text-white font-bold py-3.5 px-8 rounded-xl flex items-center justify-center gap-3 text-lg shadow-md transition duration-200">
+                    <i class="fas fa-phone-alt fa-fw"></i> LIGAR AGORA
+                    <span class="text-xs bg-white/20 px-2 py-0.5 rounded-full ml-1">61 98121-4135</span>
+                </a>
+                <!-- Botão WhatsApp centralizado, mas aparece tanto aqui quanto flutuante - a pedido "botão de WhatsApp flutuante e no centro" -->
+                <a href="https://wa.me/5561981214135?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20para%20manutenção%20elétrica." target="_blank" class="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-3.5 px-8 rounded-xl flex items-center justify-center gap-3 text-lg shadow-md transition duration-200">
+                    <i class="fab fa-whatsapp fa-fw text-xl"></i> WHATSAPP CENTRAL
+                </a>
+            </div>
+            <div class="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-gray-400">
+                <span><i class="fas fa-certificate text-orange-500 mr-1"></i> Responsável Técnico: Rodrigo Xavier - CREA 06870181616</span>
+                <span><i class="fas fa-file-alt text-orange-500 mr-1"></i> Emissão de Laudos</span>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO DE SERVIÇOS 3 CARDS: Industrial, Predial/Comercial, Manutenção Técnica -->
-    <section class="py-20 px-5 bg-white bg-industrial-pattern">
+    <!-- LISTA DE SERVIÇOS: Elétrica Industrial, Predial, Comercial e Manutenção Corretiva/Preventiva -->
+    <section class="py-16 px-5 bg-white bg-industrial-pattern">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
-                <span class="text-orange-500 font-semibold tracking-wide uppercase text-sm"><i class="fas fa-tools mr-1"></i> Nossas soluções</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Serviços especializados com excelência técnica</h2>
-                <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+                <span class="text-orange-ms font-bold text-sm uppercase tracking-wider"><i class="fas fa-plug mr-1"></i> Especialidades</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mt-2">Soluções completas em energia elétrica</h2>
+                <div class="w-20 h-1 bg-orange-ms mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Serviços executados com alto padrão técnico e segurança, garantindo eficiência e redução de riscos.</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1: Industrial -->
-                <div class="card-hover bg-gray-50 rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-all duration-200">
-                    <div class="bg-gray-900 p-4 flex items-center gap-3">
-                        <i class="fas fa-industry text-orange-500 text-3xl"></i>
-                        <h3 class="text-2xl font-bold text-white">Industrial</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1: Elétrica Industrial -->
+                <div class="card-service p-6 shadow-elevated border border-gray-100 hover:border-orange-200 transition">
+                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-4">
+                        <i class="fas fa-industry text-3xl text-orange-ms"></i>
                     </div>
-                    <div class="p-6">
-                        <p class="text-gray-700 leading-relaxed">Comandos elétricos, painéis de automação, manutenção em máquinas pesadas, diagnóstico de falhas e adequação às normas NR-12. Potência e segurança para seu parque fabril.</p>
-                        <ul class="mt-4 space-y-2">
-                            <li class="flex items-center gap-2 text-sm"><i class="fas fa-microchip text-orange-500 w-5"></i> Quadros de comando</li>
-                            <li class="flex items-center gap-2 text-sm"><i class="fas fa-plug text-orange-500 w-5"></i> Instalações trifásicas</li>
-                            <li class="flex items-center gap-2 text-sm"><i class="fas fa-chart-line text-orange-500 w-5"></i> Correção fator de potência</li>
-                        </ul>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Elétrica Industrial</h3>
+                    <p class="text-gray-600 text-sm">Painéis de comando, instalações eletrica e adequação de máquinas conforme NR-12.</p>
+                    <div class="mt-4 flex items-center text-orange-ms text-xs font-semibold">
+                        <span>Comandos elétricos</span> <i class="fas fa-arrow-right ml-1 text-xs"></i>
                     </div>
                 </div>
-
-                <!-- Card 2: Predial / Comercial -->
-                <div class="card-hover bg-gray-50 rounded-2xl shadow-md overflow-hidden border border-gray-100">
-                    <div class="bg-gray-900 p-4 flex items-center gap-3">
-                        <i class="fas fa-building text-orange-500 text-3xl"></i>
-                        <h3 class="text-2xl font-bold text-white">Predial/Comercial</h3>
+                <!-- Card 2: Elétrica Predial -->
+                <div class="card-service p-6 shadow-elevated border border-gray-100 hover:border-orange-200 transition">
+                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-4">
+                        <i class="fas fa-building text-3xl text-orange-ms"></i>
                     </div>
-                    <div class="p-6">
-                        <p class="text-gray-700 leading-relaxed">Instalações e manutenções para condomínios, lojas, escritórios e comércios. Garantimos eficiência energética, iluminação de emergência e projetos elétricos completos.</p>
-                        <ul class="mt-4 space-y-2">
-                            <li class="flex items-center gap-2 text-sm"><i class="fas fa-lightbulb text-orange-500 w-5"></i> Projetos e reformas</li>
-                            <li class="flex items-center gap-2 text-sm"><i class="fas fa-charging-station text-orange-500 w-5"></i> Quadros elétricos comerciais</li>
-                            <li class="flex items-center gap-2 text-sm"><i class="fas fa-shield-alt text-orange-500 w-5"></i> Sistema de aterramento e SPDA</li>
-                        </ul>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Elétrica Predial</h3>
+                    <p class="text-gray-600 text-sm">instalações elétricas para edifícios residenciais e comerciais, quadros de distribuição, iluminação de emergência, SPDA e aterramento.</p>
+                    <div class="mt-4 flex items-center text-orange-ms text-xs font-semibold">
+                        <span>Normas NBR 5410</span> <i class="fas fa-arrow-right ml-1 text-xs"></i>
                     </div>
                 </div>
-
-                <!-- Card 3: Manutenção Técnica (Preventiva/Corretiva com Laudo) -->
-                <div class="card-hover bg-gray-50 rounded-2xl shadow-md overflow-hidden border border-gray-100">
-                    <div class="bg-gray-900 p-4 flex items-center gap-3">
-                        <i class="fas fa-clipboard-list text-orange-500 text-3xl"></i>
-                        <h3 class="text-2xl font-bold text-white">Manutenção Técnica</h3>
+                <!-- Card 3: Elétrica Comercial -->
+                <div class="card-service p-6 shadow-elevated border border-gray-100 hover:border-orange-200 transition">
+                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-4">
+                        <i class="fas fa-store text-3xl text-orange-ms"></i>
                     </div>
-                    <div class="p-6">
-                        <p class="text-gray-700 leading-relaxed">Preventiva e corretiva com emissão de laudo técnico detalhado. Realizamos termografia, análise de cargas e relatórios conforme exigências de órgãos fiscalizadores.</p>
-                        <ul class="mt-4 space-y-2">
-                            <li class="flex items-center gap-2 text-sm"><i class="fas fa-file-pdf text-orange-500 w-5"></i> Laudo de conformidade</li>
-                            <li class="flex items-center gap-2 text-sm"><i class="fas fa-calendar-check text-orange-500 w-5"></i> Planos preventivos personalizados</li>
-                            <li class="flex items-center gap-2 text-sm"><i class="fas fa-tachometer-alt text-orange-500 w-5"></i> Diagnóstico com relatório técnico</li>
-                        </ul>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Elétrica Comercial</h3>
+                    <p class="text-gray-600 text-sm">Lojas, supermercados, escritórios e restaurantes. Manutenção preventiva, substituição de disjuntores, laudos de carga e eficiência energética.</p>
+                    <div class="mt-4 flex items-center text-orange-ms text-xs font-semibold">
+                        <span>Segurança patrimonial</span> <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                    </div>
+                </div>
+                <!-- Card 4: Manutenção Corretiva + Preventiva (diferencial) -->
+                <div class="card-service p-6 shadow-elevated border border-gray-100 hover:border-orange-200 transition">
+                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-4">
+                        <i class="fas fa-tools text-3xl text-orange-ms"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Corretiva & Preventiva</h3>
+                    <p class="text-gray-600 text-sm">Atendimento emergencial 24h, diagnóstico técnico, termografia, laudo de conformidade e planos de manutenção periódica para evitar paradas não programadas.</p>
+                    <div class="mt-4 flex items-center text-orange-ms text-xs font-semibold">
+                        <span>Laudo técnico incluso</span> <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dica extra: selo de garantia de qualidade -->
+            <div class="mt-12 bg-gray-50 rounded-2xl p-5 flex flex-wrap items-center justify-between gap-4 border border-gray-100">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-hard-hat text-3xl text-orange-ms"></i>
+                    <div>
+                        <p class="font-bold text-gray-800">Profissionais habilitados</p>
+                        <p class="text-xs text-gray-500">Equipe técnica com registro ativo no CREA</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-file-signature text-3xl text-orange-ms"></i>
+                    <div>
+                        <p class="font-bold text-gray-800">Garantia de serviço</p>
+                        <p class="text-xs text-gray-500">Laudos e relatórios pós-serviço</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/5561981214135?text=Quero%20saber%20mais%20sobre%20manutenção%20preventiva" target="_blank" class="text-orange-ms font-semibold text-sm flex items-center gap-1 hover:underline">
+                    Solicitar diagnóstico <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre / Responsável técnico + Credenciais -->
+    <section class="py-12 px-5 bg-gray-50">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-10 items-center">
+            <div class="flex-1 text-center md:text-left">
+                <div class="inline-block bg-orange-100 rounded-full px-3 py-1 text-xs font-semibold text-orange-700 mb-3"><i class="fas fa-id-card mr-1"></i> RESPONSABILIDADE TÉCNICA</div>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Segurança e excelência com registro no CREA</h3>
+                <p class="text-gray-600 mt-3">Rodrigo Xavier dos Santos, engenheiro eletricista responsável pela MS Manutenção, garante que todos os serviços sigam rigorosamente as normas regulamentadoras e boas práticas de engenharia.</p>
+                <div class="mt-5 bg-white p-4 rounded-xl border-left-accent shadow-sm">
+                    <p class="font-mono text-sm text-gray-700"><span class="font-bold text-gray-900">CREA:</span> 06870181616</p>
+                    <p class="font-mono text-sm text-gray-700"><span class="font-bold text-gray-900">CNPJ:</span> 56.964.600/0001-24</p>
+                    <p class="text-sm text-gray-500 mt-2 flex items-center gap-1"><i class="fas fa-map-pin text-orange-500"></i> Base operacional em Luziânia-GO, com cobertura para todo o Entorno do DF.</p>
+                </div>
+            </div>
+            <div class="flex-1 flex justify-center">
+                <div class="bg-white rounded-2xl p-5 shadow-md border border-gray-100 w-full max-w-xs">
+                    <i class="fas fa-bolt text-5xl text-orange-ms mx-auto block text-center mb-2"></i>
+                    <div class="text-center">
+                        <p class="text-xs text-gray-500 uppercase tracking-wide">Certificações e padrões</p>
+                        <div class="flex justify-center gap-3 mt-3 text-2xl text-gray-700">
+                            <i class="fas fa-check-circle text-orange-500"></i>
+                            <i class="fas fa-charging-station"></i>
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-3">Normas NR-10 / NR-12 / NBR-5410</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Diferenciais + Autoridade Técnica (CREA / Experiência) -->
-    <section class="py-16 px-5 bg-gray-900 text-white">
+    <!-- RODAPÉ com CNPJ, CREA, contatos e links sociais (Instagram e telefone) -->
+    <footer class="bg-gray-900 text-gray-300 pt-12 pb-6 px-5">
         <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-gray-800 pb-8">
                 <div>
-                    <i class="fas fa-hard-hat text-orange-500 text-4xl mb-3"></i>
-                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Compromisso com técnica, segurança e normas regulamentadoras</h3>
-                    <p class="text-gray-300 mb-5 leading-relaxed">
-                        Na MS Manutenção, cada intervenção é realizada seguindo rigorosamente as normas NR-10 (Segurança em Instalações e Serviços em Eletricidade) e NR-12. Contamos com profissional habilitado e registro no CREA, garantindo excelência e responsabilidade técnica.
-                    </p>
-                    <div class="flex items-center gap-3 bg-gray-800 p-4 rounded-xl border-l-4 border-orange-500">
-                        <i class="fas fa-id-card text-orange-400 text-3xl"></i>
-                        <div>
-                            <p class="font-semibold">Responsável Técnico:</p>
-                            <p class="text-sm text-gray-200">Rodrigo Xavier dos Santos</p>
-                            <p class="text-xs text-orange-300">CREA 06870181616</p>
-                        </div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fas fa-bolt text-orange-500 text-xl"></i>
+                        <span class="font-bold text-white text-xl tracking-tight">MS Manutenção</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-3">Residencial e Industrial — Referência em soluções elétricas em Luziânia-GO e região. Compromisso com a segurança, técnica e agilidade.</p>
+                    <div class="flex space-x-4 mt-3">
+                        <!-- LINK DO INSTAGRAM OFICIAL -->
+                        <a href="https://www.instagram.com/msmanutencaoresidencial?igsh=b2V2eWNnMjRmMHcx" target="_blank" class="text-gray-400 hover:text-orange-500 transition text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5561981214135" target="_blank" class="text-gray-400 hover:text-green-400 transition text-2xl">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="tel:61981214135" class="text-gray-400 hover:text-orange-500 transition text-2xl">
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="bg-gray-800/50 rounded-2xl p-6 border border-gray-700">
-                    <div class="flex flex-wrap justify-between gap-4">
-                        <div class="text-center flex-1">
-                            <i class="fas fa-clock text-orange-500 text-3xl"></i>
-                            <p class="font-bold mt-2">+15 anos</p>
-                            <p class="text-xs text-gray-400">de experiência</p>
-                        </div>
-                        <div class="text-center flex-1">
-                            <i class="fas fa-map-marker-alt text-orange-500 text-3xl"></i>
-                            <p class="font-bold mt-2">Luziânia - GO</p>
-                            <p class="text-xs text-gray-400">Atendimento regional</p>
-                        </div>
-                        <div class="text-center flex-1">
-                            <i class="fas fa-file-signature text-orange-500 text-3xl"></i>
-                            <p class="font-bold mt-2">Laudos Técnicos</p>
-                            <p class="text-xs text-gray-400">Garantia e conformidade</p>
-                        </div>
-                    </div>
-                    <div class="mt-6 text-center text-sm text-gray-300">
-                        <i class="fas fa-shield-alt text-orange-400"></i> Cobertura em Luziânia e região | Resposta rápida
+                <div>
+                    <h5 class="text-white font-semibold text-md mb-4 tracking-wide">Contato e Localização</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start gap-2"><i class="fas fa-map-marker-alt text-orange-500 mt-1"></i> <span>Luziânia - GO, Setor Central</span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-phone-alt text-orange-500"></i> <a href="tel:61981214135" class="hover:text-orange-400">(61) 98121-4135</a></li>
+                        <li class="flex items-center gap-2"><i class="fab fa-whatsapp text-green-400"></i> <a href="https://wa.me/5561981214135" target="_blank" class="hover:text-green-300">(61) 98121-4135 (WhatsApp)</a></li>
+                        <li class="flex items-center gap-2"><i class="fab fa-instagram text-orange-300"></i> <a href="https://www.instagram.com/msmanutencaoresidencial" target="_blank" class="hover:text-orange-300">@msmanutencaoresidencial</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-semibold text-md mb-4">Documentação oficial</h5>
+                    <p class="text-sm"><span class="text-gray-400">CNPJ:</span> 56.964.600/0001-24</p>
+                    <p class="text-sm mt-1"><span class="text-gray-400">Responsável Técnico:</span> Rodrigo Xavier dos Santos</p>
+                    <p class="text-sm font-mono text-orange-300">CREA 06870181616</p>
+                    <div class="mt-4 bg-gray-800/50 p-3 rounded-lg">
+                        <p class="text-[11px] text-gray-400 flex items-center gap-1"><i class="fas fa-shield-alt text-orange-500 text-xs"></i> Engenharia elétrica com alto padrão de qualidade e segurança.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Call to Action + Links diretos (whatsapp e contato) -->
-    <section class="py-16 px-5 bg-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <span class="bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-sm font-semibold"><i class="fab fa-whatsapp mr-1"></i> Atendimento rápido</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-5">Pronto para uma solução elétrica segura e eficiente?</h2>
-            <p class="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">Fale agora com nossa equipe técnica e solicite um diagnóstico ou orçamento sem compromisso.</p>
-            <div class="flex flex-col sm:flex-row gap-5 justify-center mt-8">
-                <a href="tel:61993130570" class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded-xl flex items-center justify-center gap-3 transition shadow-md">
-                    <i class="fas fa-phone-alt"></i> Ligar Agora
-                </a>
-                <a href="https://wa.me/5561993130570?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20manutenção%20elétrica." target="_blank" class="btn-orange text-white font-bold py-3 px-8 rounded-xl flex items-center justify-center gap-3 transition shadow-md">
-                    <i class="fab fa-whatsapp text-xl"></i> Chamar no WhatsApp
-                </a>
+            <div class="text-center text-xs text-gray-500 mt-6">
+                &copy; 2026 MS Manutenção Residencial e Industrial. Todos os direitos reservados. | Atendimento em Luziânia-GO e Entorno.
             </div>
-        </div>
-    </section>
-
-    <!-- RODAPÉ PROFISSIONAL com CNPJ, Instagram, CREA e dados -->
-    <footer class="bg-gray-900 text-gray-300 pt-12 pb-8 px-5 border-t border-gray-800">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <div class="flex items-center gap-2 mb-3">
-                    <i class="fas fa-bolt text-orange-500 text-xl"></i>
-                    <h4 class="text-white font-bold text-xl tracking-tight">MS MANUTENÇÃO</h4>
-                </div>
-                <p class="text-sm text-gray-400 mb-3">Manutenção Elétrica Predial, Comercial e Industrial. Soluções elétricas com responsabilidade técnica e compromisso com a segurança.</p>
-                <div class="flex space-x-4 mt-4">
-                    <a href="https://instagram.com" target="_blank" class="text-gray-400 hover:text-orange-500 transition text-2xl"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/5561993130570" target="_blank" class="text-gray-400 hover:text-green-400 transition text-2xl"><i class="fab fa-whatsapp"></i></a>
-                    <a href="tel:61993130570" class="text-gray-400 hover:text-orange-500 transition text-2xl"><i class="fas fa-phone-alt"></i></a>
-                </div>
-            </div>
-            <div>
-                <h5 class="text-white font-semibold text-md mb-3 tracking-wide">Contato & Localização</h5>
-                <ul class="space-y-2 text-sm">
-                    <li><i class="fas fa-map-pin text-orange-500 w-5 mr-2"></i> Luziânia - GO</li>
-                    <li><i class="fas fa-phone-alt text-orange-500 w-5 mr-2"></i> <a href="tel:61993130570" class="hover:text-orange-400">(61) 99313-0570</a></li>
-                    <li><i class="fab fa-whatsapp text-orange-500 w-5 mr-2"></i> <a href="https://wa.me/5561993130570" target="_blank" class="hover:text-green-400">WhatsApp (61) 99313-0570</a></li>
-                    <li><i class="fab fa-instagram text-orange-500 w-5 mr-2"></i> <a href="https://instagram.com" target="_blank" class="hover:text-orange-400">@msmanutencaoresidencial</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="text-white font-semibold text-md mb-3">Documentos e Responsável</h5>
-                <p class="text-xs mb-1"><span class="font-semibold">CNPJ:</span> 56.964.600/0001-24</p>
-                <p class="text-xs mb-1"><span class="font-semibold">Responsável Técnico:</span> Rodrigo Xavier dos Santos</p>
-                <p class="text-xs text-orange-300 font-mono">CREA 06870181616</p>
-                <div class="mt-3 pt-2 border-t border-gray-800 text-[11px] text-gray-500">
-                    © 2026 MS Manutenção Residencial e Industrial. Todos os direitos reservados.
-                </div>
-            </div>
-        </div>
-        <div class="text-center text-xs text-gray-600 mt-8 border-t border-gray-800 pt-6">
-            <p>Atendimento especializado em Luziânia-GO e região. Normas técnicas e segurança em primeiro lugar.</p>
         </div>
     </footer>
 
-    <!-- BOTÃO FLUTUANTE WHATSAPP (ícone fixo) -->
-    <a href="https://wa.me/5561993130570?text=Olá!%20Gostaria%20de%20um%20orçamento%20ou%20informações%20sobre%20manutenção%20elétrica." target="_blank" class="whatsapp-float flex items-center justify-center" aria-label="Fale conosco no WhatsApp">
+    <!-- BOTÃO WHATSAPP FLUTUANTE (fixo) -->
+    <a href="https://wa.me/5561981214135?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20informações%20sobre%20manutenção%20elétrica." target="_blank" class="whatsapp-float flex items-center justify-center" aria-label="Fale conosco pelo WhatsApp">
         <i class="fab fa-whatsapp text-white text-3xl"></i>
     </a>
 
-    <!-- pequeno script para garantir que os links do instagram e footer estejam dinâmicos com redirecionamento correto, mas mantendo o placeholder -->
+    <!-- Script leve para garantir que nenhum link seja quebrado e ajuste de tracking opcional -->
     <script>
-        // atualizar dinamicamente o link do instagram conforme informado: @msmanutencaoresidencial
-        document.querySelectorAll('a[href="https://instagram.com"]').forEach(link => {
-            link.setAttribute('href', 'https://instagram.com/msmanutencaoresidencial');
-        });
-        // Facilitar também a exibição do handle no rodapé
-        const instaHandles = document.querySelectorAll('a[href*="instagram.com/msmanutencaoresidencial"]');
-        if (instaHandles.length === 0) {
-            // garante que todos links com texto '@msmanutencaoresidencial' fiquem ok (já temos no footer)
+        // Garantir que todos os links do instagram no rodapé e demais redirecionem para o perfil correto
+        const instagramLinks = document.querySelectorAll('a[href*="instagram.com/msmanutencaoresidencial"]');
+        if (instagramLinks.length === 0) {
+            const footerInsta = document.querySelector('a[href="https://www.instagram.com/msmanutencaoresidencial?igsh=b2V2eWNnMjRmMHcx"]');
+            if(footerInsta) footerInsta.setAttribute('href', 'https://www.instagram.com/msmanutencaoresidencial?igsh=b2V2eWNnMjRmMHcx');
         }
-        // para melhorar a experiência mobile: verificar se cliques em números de telefone funcionam perfeitamente
-        console.log("Landing Page MS Manutenção - Alta Conversão pronta");
+        // melhorar clique nos números de telefone para dispositivos moveis
+        console.log("Landing Page MS Manutenção carregada - versão mobile first");
     </script>
 </body>
 </html>
