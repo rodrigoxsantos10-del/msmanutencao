@@ -4,95 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MS Manutenção | Elétrica Predial e Industrial</title>
-    <!-- ESSA LINHA ABAIXO É A MAIS IMPORTANTE PARA O VISUAL FUNCIONAR -->
     <script src="https://tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         .bg-ms-orange { background-color: #FF6600; }
         .text-ms-orange { color: #FF6600; }
         .hover-ms-orange:hover { background-color: #e65c00; }
-        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900 font-sans">
 
-    <!-- TOPO INFORMATIVO -->
-    <div class="bg-ms-orange text-white py-2 px-4 text-xs md:text-sm font-bold flex flex-wrap justify-center gap-4 text-center">
+    <!-- TOPO -->
+    <div class="bg-ms-orange text-white py-2 px-4 text-xs font-bold flex justify-center gap-4 text-center">
         <span><i class="fas fa-map-marker-alt mr-1"></i> Luziânia - GO</span>
-        <span><i class="fas fa-user-tie mr-1"></i> Responsável: Rodrigo Xavier - CREA 06870181616</span>
+        <span><i class="fas fa-user-tie mr-1"></i> RT: Rodrigo Xavier - CREA 06870181616</span>
     </div>
 
     <!-- MENU -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex flex-col">
-                <span class="text-xl md:text-2xl font-black italic">MS <span class="text-ms-orange">MANUTENÇÃO</span></span>
-                <span class="text-[10px] font-bold text-gray-500 uppercase tracking-tighter">Residencial e Industrial</span>
-            </div>
-            <a href="tel:61981214135" class="bg-ms-orange text-white px-4 py-2 rounded-lg font-bold hover-ms-orange flex items-center shadow-lg">
-                <i class="fas fa-phone-alt mr-2"></i> LIGAR
-            </a>
+    <nav class="bg-white shadow-md sticky top-0 z-50 py-4 px-6 flex justify-between items-center">
+        <div class="flex flex-col">
+            <span class="text-xl font-black italic text-gray-900">MS <span class="text-ms-orange">MANUTENÇÃO</span></span>
+            <span class="text-[10px] font-bold text-gray-500 uppercase">Residencial e Industrial</span>
         </div>
+        <a href="tel:61981214135" class="bg-ms-orange text-white px-4 py-2 rounded-lg font-bold shadow-md hover-ms-orange">LIGAR</a>
     </nav>
 
-    <!-- BANNER PRINCIPAL -->
-    <header class="bg-gray-900 py-16 px-4 text-center relative">
-        <div class="container mx-auto relative z-10">
-            <h1 class="text-4xl md:text-6xl font-black text-white mb-6 uppercase">
-                Manutenção Elétrica <br> <span class="text-ms-orange">Predial e Industrial</span>
-            </h1>
-            <p class="text-gray-300 mb-10 max-w-xl mx-auto font-medium">Atendimento especializado em Luziânia com foco em segurança e normas técnicas.</p>
-            
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="tel:61981214135" class="bg-ms-orange text-white px-10 py-4 rounded-xl font-black text-lg shadow-2xl hover-ms-orange flex items-center justify-center">
-                    <i class="fas fa-phone-alt mr-3"></i> LIGAR AGORA
-                </a>
-                <a href="https://wa.me" class="bg-green-600 text-white px-10 py-4 rounded-xl font-black text-lg shadow-2xl hover:bg-green-700 flex items-center justify-center">
-                    <i class="fab fa-whatsapp mr-3 text-2xl"></i> WHATSAPP
-                </a>
-            </div>
+    <!-- BANNER -->
+    <header class="bg-gray-900 py-16 px-6 text-center">
+        <h1 class="text-3xl md:text-5xl font-black text-white mb-6 uppercase">Manutenção Elétrica <span class="text-ms-orange"><br>Predial e Industrial</span></h1>
+        <p class="text-gray-300 mb-8 max-w-lg mx-auto">Especialista em Luziânia com foco em segurança e normas técnicas.</p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+            <a href="tel:61981214135" class="bg-ms-orange text-white px-8 py-4 rounded-xl font-black text-lg shadow-xl hover-ms-orange flex items-center justify-center">
+                <i class="fas fa-phone-alt mr-2"></i> LIGAR AGORA
+            </a>
+            <a href="https://wa.me" class="bg-green-600 text-white px-8 py-4 rounded-xl font-black text-lg shadow-xl hover:bg-green-700 flex items-center justify-center">
+                <i class="fab fa-whatsapp mr-2 text-2xl"></i> WHATSAPP
+            </a>
         </div>
     </header>
 
     <!-- SERVIÇOS -->
-    <section class="py-16 container mx-auto px-4">
-        <h2 class="text-2xl font-black text-center mb-12 uppercase border-b-4 border-ms-orange w-max mx-auto">Nossos Serviços</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 text-center">
-                <i class="fas fa-industry text-4xl text-ms-orange mb-4"></i>
-                <h3 class="font-black text-lg mb-2 uppercase italic">Industrial</h3>
-                <p class="text-gray-600 text-sm">Comandos elétricos, quadros e manutenção de máquinas.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 text-center">
-                <i class="fas fa-building text-4xl text-ms-orange mb-4"></i>
-                <h3 class="font-black text-lg mb-2 uppercase italic">Comercial / Predial</h3>
-                <p class="text-gray-600 text-sm">Instalações em comércios, condomínios e residências.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 text-center border-b-8 border-b-ms-orange">
-                <i class="fas fa-tools text-4xl text-ms-orange mb-4"></i>
-                <h3 class="font-black text-lg mb-2 uppercase italic">Manutenção</h3>
-                <p class="text-gray-600 text-sm">Atendimento corretivo e preventivo com emissão de laudo técnico.</p>
-            </div>
+    <section class="py-12 container mx-auto px-6 grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-ms-orange text-center">
+            <i class="fas fa-industry text-3xl text-ms-orange mb-4"></i>
+            <h3 class="font-bold mb-2">INDUSTRIAL</h3>
+            <p class="text-gray-600 text-sm">Comandos, painéis e máquinas.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-ms-orange text-center">
+            <i class="fas fa-building text-3xl text-ms-orange mb-4"></i>
+            <h3 class="font-bold mb-2">PREDIAL</h3>
+            <p class="text-gray-600 text-sm">Instalações e quadros gerais.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-ms-orange text-center">
+            <i class="fas fa-tools text-3xl text-ms-orange mb-4"></i>
+            <h3 class="font-bold mb-2">MANUTENÇÃO</h3>
+            <p class="text-gray-600 text-sm">Corretiva e Preventiva com CREA.</p>
         </div>
     </section>
 
     <!-- RODAPÉ -->
-    <footer class="bg-gray-900 text-white py-12 px-4 text-center">
-        <div class="container mx-auto">
-            <p class="font-black text-lg mb-2 uppercase italic">MS Manutenção Residencial e Industrial</p>
-            <p class="text-gray-400 text-sm mb-6">CNPJ: 56.964.600/0001-24</p>
-            
-            <a href="https://instagram.com" target="_blank" class="inline-flex items-center text-ms-orange font-bold hover:underline mb-8">
-                <i class="fab fa-instagram mr-2 text-2xl"></i> @msmanutencaoresidencial
-            </a>
-            
-            <div class="h-px bg-gray-800 w-full mb-6"></div>
-            <p class="text-[10px] text-gray-500 uppercase tracking-widest italic">Responsável Técnico: Rodrigo Xavier dos Santos - CREA 06870181616</p>
-        </div>
+    <footer class="bg-gray-900 text-white py-10 px-6 text-center">
+        <p class="font-black text-sm uppercase mb-2">MS Manutenção Residencial e Industrial</p>
+        <p class="text-gray-500 text-xs mb-4">CNPJ: 56.964.600/0001-24</p>
+        <a href="https://instagram.com" target="_blank" class="text-ms-orange font-bold text-sm block mb-6">@msmanutencaoresidencial</a>
+        <p class="text-[9px] text-gray-600 uppercase italic">Resp. Técnico: Rodrigo Xavier dos Santos - CREA 06870181616</p>
     </footer>
 
-    <!-- BOTÃO FLUTUANTE -->
-    <a href="https://wa.me" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-50">
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-2xl z-50">
         <i class="fab fa-whatsapp"></i>
     </a>
 
