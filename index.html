@@ -1,857 +1,102 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MS Manutenção - Especialista em Elétrica Industrial, Painéis e Manutenção Residencial em Luziânia. Atendimento 24h, Certificado e Seguro.">
-    <meta name="keywords" content="elétrica industrial, painéis elétricos, manutenção residencial, Luziânia, eletricista profissional">
-    <meta name="author" content="MS Manutenção Residencial e Industrial">
-    <title>MS Manutenção | Elétrica Industrial e Residencial em Luziânia</title>
+    <title>MS Manutenção | Elétrica Predial e Industrial</title>
+    <script src="https://tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --azul-marinho: #0f2744;
-            --azul-escuro: #1a3a52;
-            --cinza-escuro: #2d3e50;
-            --cinza-claro: #ecf0f1;
-            --amarelo-ouro: #ffc107;
-            --laranja-destaque: #ff8c00;
-            --branco: #ffffff;
-            --sombra: 0 8px 32px rgba(0, 0, 0, 0.1);
-            --sombra-forte: 0 12px 48px rgba(0, 0, 0, 0.15);
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
-            color: var(--cinza-escuro);
-            background: var(--cinza-claro);
-            overflow-x: hidden;
-        }
-        
-        /* BOTÕES FLUTUANTES */
-        .floating-buttons {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .float-btn {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: var(--sombra-forte);
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        .float-btn:hover {
-            transform: scale(1.15);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-        }
-        
-        .float-whatsapp {
-            background: linear-gradient(135deg, #25D366 0%, #20BA58 100%);
-            color: white;
-        }
-        
-        .float-phone {
-            background: linear-gradient(135deg, var(--amarelo-ouro) 0%, #ffb300 100%);
-            color: var(--azul-marinho);
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        /* HEADER */
-        header {
-            background: linear-gradient(135deg, var(--azul-marinho) 0%, var(--azul-escuro) 100%);
-            color: white;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: var(--sombra);
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .header-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex: 1;
-        }
-        
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--amarelo-ouro) 0%, var(--laranja-destaque) 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
-        }
-        
-        .logo-text h1 {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 2px;
-        }
-        
-        .logo-text p {
-            font-size: 11px;
-            opacity: 0.9;
-            font-weight: 500;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        
-        .header-contact {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-        
-        .contact-info {
-            text-align: right;
-            font-size: 13px;
-        }
-        
-        .contact-info p {
-            margin: 3px 0;
-            opacity: 0.95;
-        }
-        
-        .contact-info strong {
-            font-size: 16px;
-            display: block;
-            color: var(--amarelo-ouro);
-        }
-        
-        .header-btn {
-            background: linear-gradient(135deg, var(--amarelo-ouro) 0%, var(--laranja-destaque) 100%);
-            color: var(--azul-marinho);
-            padding: 12px 28px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .header-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3);
-        }
-        
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(135deg, var(--azul-marinho) 0%, var(--azul-escuro) 100%);
-            color: white;
-            padding: 120px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255, 193, 7, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 56px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            letter-spacing: -1px;
-        }
-        
-        .hero h1 .destaque {
-            color: var(--amarelo-ouro);
-            text-shadow: 0 2px 10px rgba(255, 193, 7, 0.3);
-        }
-        
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 40px;
-            opacity: 0.95;
-            line-height: 1.8;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn-hero {
-            padding: 16px 40px;
-            font-size: 15px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--amarelo-ouro) 0%, var(--laranja-destaque) 100%);
-            color: var(--azul-marinho);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(255, 193, 7, 0.4);
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: var(--azul-marinho);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--cinza-claro);
-            transform: translateY(-4px);
-        }
-        
-        /* SEÇÃO SERVIÇOS */
-        .section {
-            padding: 100px 20px;
-            background: white;
-        }
-        
-        .section-title {
-            font-size: 42px;
-            color: var(--azul-marinho);
-            margin-bottom: 60px;
-            text-align: center;
-            position: relative;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 5px;
-            background: linear-gradient(90deg, var(--amarelo-ouro), var(--laranja-destaque));
-            border-radius: 3px;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-        
-        .service-card {
-            background: linear-gradient(135deg, var(--cinza-claro) 0%, white 100%);
-            padding: 40px;
-            border-radius: 15px;
-            border-left: 5px solid var(--amarelo-ouro);
-            box-shadow: var(--sombra);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, rgba(255, 193, 7, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--sombra-forte);
-            border-left-color: var(--laranja-destaque);
-        }
-        
-        .service-icon {
-            font-size: 50px;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-        
-        .service-card h3 {
-            color: var(--azul-marinho);
-            margin-bottom: 15px;
-            font-size: 22px;
-            font-weight: 700;
-        }
-        
-        .service-card p {
-            color: #666;
-            font-size: 15px;
-            line-height: 1.8;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* DIFERENCIAIS */
-        .diferenciais {
-            background: linear-gradient(135deg, var(--azul-marinho) 0%, var(--azul-escuro) 100%);
-            color: white;
-        }
-        
-        .diferenciais .section-title {
-            color: white;
-        }
-        
-        .diferenciais .section-title::after {
-            background: linear-gradient(90deg, var(--amarelo-ouro), var(--laranja-destaque));
-        }
-        
-        .diferencial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-        
-        .diferencial-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 35px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 193, 7, 0.2);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-        }
-        
-        .diferencial-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--amarelo-ouro);
-            transform: translateY(-5px);
-        }
-        
-        .diferencial-icon {
-            font-size: 45px;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-        
-        .diferencial-item h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .diferencial-item p {
-            font-size: 14px;
-            opacity: 0.95;
-            line-height: 1.7;
-        }
-        
-        /* GALERIA */
-        .galeria {
-            background: white;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 60px;
-        }
-        
-        .gallery-item {
-            background: linear-gradient(135deg, var(--azul-marinho) 0%, var(--azul-escuro) 100%);
-            border-radius: 15px;
-            overflow: hidden;
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 60px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: var(--sombra);
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: var(--sombra-forte);
-        }
-        
-        .gallery-placeholder {
-            text-align: center;
-            font-size: 14px;
-            opacity: 0.8;
-        }
-        
-        /* CONTATO */
-        .contato {
-            background: linear-gradient(135deg, var(--azul-marinho) 0%, var(--azul-escuro) 100%);
-            color: white;
-            text-align: center;
-        }
-        
-        .contato .section-title {
-            color: white;
-        }
-        
-        .contato .section-title::after {
-            background: linear-gradient(90deg, var(--amarelo-ouro), var(--laranja-destaque));
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-            margin-bottom: 60px;
-        }
-        
-        .contact-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 193, 7, 0.2);
-        }
-        
-        .contact-item-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-        
-        .contact-item h4 {
-            font-size: 16px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .contact-item p {
-            font-size: 14px;
-            opacity: 0.95;
-        }
-        
-        .contact-item a {
-            color: var(--amarelo-ouro);
-            text-decoration: none;
-            font-weight: 700;
-        }
-        
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-        
-        /* FOOTER */
-        footer {
-            background: var(--azul-marinho);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 3px solid var(--amarelo-ouro);
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-section h5 {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            color: var(--amarelo-ouro);
-            font-weight: 700;
-        }
-        
-        .footer-section p {
-            font-size: 13px;
-            opacity: 0.9;
-            line-height: 1.8;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 15px;
-        }
-        
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 193, 7, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--amarelo-ouro);
-            text-decoration: none;
-            font-size: 18px;
-            transition: all 0.3s;
-        }
-        
-        .social-link:hover {
-            background: var(--amarelo-ouro);
-            color: var(--azul-marinho);
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 193, 7, 0.2);
-            padding-top: 20px;
-            font-size: 12px;
-            opacity: 0.8;
-        }
-        
-        /* RESPONSIVO */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 16px;
-            }
-            
-            .header-wrapper {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .header-contact {
-                flex-direction: column;
-                gap: 15px;
-                width: 100%;
-            }
-            
-            .contact-info {
-                text-align: center;
-            }
-            
-            .section-title {
-                font-size: 32px;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-            }
-            
-            .btn-hero {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .floating-buttons {
-                bottom: 20px;
-                right: 20px;
-                gap: 10px;
-            }
-            
-            .float-btn {
-                width: 60px;
-                height: 60px;
-                font-size: 28px;
-            }
-        }
+        .bg-ms-orange { background-color: #FF6600; }
+        .text-ms-orange { color: #FF6600; }
+        .hover-ms-orange:hover { background-color: #e65c00; }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body>
-    <!-- BOTÕES FLUTUANTES -->
-    <div class="floating-buttons">
-        <a href="tel:+5561981214135" class="float-btn float-phone" title="Ligar agora">☎️</a>
-        <a href="https://wa.me/5561981214135?text=Olá%20MS%20Manutenção!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20projeto." class="float-btn float-whatsapp" title="WhatsApp">💬</a>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- TOPO INFORMATIVO -->
+    <div class="bg-ms-orange text-white py-2 px-4 text-xs md:text-sm font-bold flex flex-wrap justify-center gap-4 text-center">
+        <span><i class="fas fa-map-marker-alt mr-1"></i> Luziânia - GO</span>
+        <span><i class="fas fa-user-tie mr-1"></i> Responsável Técnico: Rodrigo Xavier - CREA 06870181616</span>
     </div>
-    
-    <!-- HEADER -->
-    <header>
-        <div class="container">
-            <div class="header-wrapper">
-                <div class="logo-section">
-                    <div class="logo-icon">⚡</div>
-                    <div class="logo-text">
-                        <h1>MS MANUTENÇÃO</h1>
-                        <p>Excelência em Serviços Elétricos</p>
-                    </div>
-                </div>
-                <div class="header-contact">
-                    <div class="contact-info">
-                        <p>📞 Atendimento 24h</p>
-                        <strong>(61) 98121-4135</strong>
-                    </div>
-                    <a href="https://wa.me/5561981214135?text=Olá%20MS%20Manutenção!%20Gostaria%20de%20solicitar%20um%20orçamento." class="header-btn">Solicitar Orçamento</a>
-                </div>
+
+    <!-- MENU -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex flex-col">
+                <span class="text-xl md:text-2xl font-black italic">MS <span class="text-ms-orange">MANUTENÇÃO</span></span>
+                <span class="text-[10px] font-bold text-gray-500 uppercase tracking-tighter">Residencial e Industrial</span>
+            </div>
+            <!-- BOTAO LIGAR (MENU) -->
+            <a href="tel:61981214135" class="bg-ms-orange text-white px-4 py-2 rounded-lg font-bold hover-ms-orange flex items-center shadow-lg">
+                <i class="fas fa-phone-alt mr-2"></i> LIGAR
+            </a>
+        </div>
+    </nav>
+
+    <!-- BANNER PRINCIPAL -->
+    <header class="bg-gray-900 py-16 px-4 text-center relative overflow-hidden">
+        <div class="container mx-auto relative z-10">
+            <h1 class="text-3xl md:text-5xl font-black text-white mb-6 uppercase">
+                Manutenção Elétrica <br> <span class="text-ms-orange">Predial e Industrial</span>
+            </h1>
+            <p class="text-gray-300 mb-10 max-w-xl mx-auto font-medium">Atendimento especializado em Luziânia com foco em segurança e normas técnicas.</p>
+            
+            <!-- BOTOES DE FOCO -->
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="tel:619XXXXXXXX" class="bg-ms-orange text-white px-10 py-4 rounded-xl font-black text-lg shadow-2xl hover-ms-orange flex items-center justify-center">
+                    <i class="fas fa-phone-alt mr-3"></i> LIGAR AGORA
+                </a>
+                <a href="https://wa.me" class="bg-green-600 text-white px-10 py-4 rounded-xl font-black text-lg shadow-2xl hover:bg-green-700 flex items-center justify-center">
+                    <i class="fab fa-whatsapp mr-3 text-2xl"></i> WHATSAPP
+                </a>
             </div>
         </div>
     </header>
-    
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Soluções Completas em <span class="destaque">Elétrica Industrial e Residencial</span></h1>
-                <p>Especialistas em painéis elétricos, manutenção preventiva e atendimento de emergência 24 horas em Luziânia</p>
-                <div class="hero-buttons">
-                    <a href="https://wa.me/5561981214135?text=Olá%20MS%20Manutenção!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20projeto." class="btn-hero btn-primary">💬 Fale no WhatsApp</a>
-                    <a href="tel:+5561981214135" class="btn-hero btn-secondary">☎️ Ligar Agora</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+
     <!-- SERVIÇOS -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Nossos Serviços Especializados</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🏭</div>
-                    <h3>Elétrica Industrial</h3>
-                    <p>Instalação, manutenção e reparo de sistemas elétricos industriais com segurança e eficiência garantidas.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>Painéis Elétricos</h3>
-                    <p>Projeto, fabricação e instalação de painéis elétricos customizados para suas necessidades específicas.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Manutenção Residencial</h3>
-                    <p>Serviços completos de elétrica residencial, desde reparos simples até reformas e ampliações.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔍</div>
-                    <h3>Manutenção Preventiva</h3>
-                    <p>Inspeções periódicas e manutenção preventiva para evitar problemas e aumentar a vida útil dos equipamentos.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🚨</div>
-                    <h3>Atendimento de Emergência</h3>
-                    <p>Resposta rápida 24 horas para situações de emergência e falhas elétricas críticas.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✅</div>
-                    <h3>Inspeção e Certificação</h3>
-                    <p>Laudos técnicos e certificações de conformidade com normas de segurança e regulamentações vigentes.</p>
-                </div>
+    <section class="py-16 container mx-auto px-4">
+        <h2 class="text-2xl font-black text-center mb-12 uppercase border-b-4 border-ms-orange w-max mx-auto">Nossos Serviços</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center">
+                <i class="fas fa-industry text-4xl text-ms-orange mb-4"></i>
+                <h3 class="font-black text-lg mb-2 uppercase">Industrial</h3>
+                <p class="text-gray-600 text-sm">Comandos elétricos, quadros e manutenção de máquinas.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center">
+                <i class="fas fa-building text-4xl text-ms-orange mb-4"></i>
+                <h3 class="font-black text-lg mb-2 uppercase">Comercial / Predial</h3>
+                <p class="text-gray-600 text-sm">Instalações em comércios, condomínios e residências.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center">
+                <i class="fas fa-tools text-4xl text-ms-orange mb-4"></i>
+                <h3 class="font-black text-lg mb-2 uppercase">Manutenção</h3>
+                <p class="text-gray-600 text-sm">Atendimento corretivo e preventivo com CREA.</p>
             </div>
         </div>
     </section>
-    
-    <!-- DIFERENCIAIS -->
-    <section class="section diferenciais">
-        <div class="container">
-            <h2 class="section-title">Por Que Escolher a MS Manutenção?</h2>
-            <div class="diferencial-grid">
-                <div class="diferencial-item">
-                    <div class="diferencial-icon">⏰</div>
-                    <h4>Atendimento 24/7</h4>
-                    <p>Disponível todos os dias, inclusive finais de semana e feriados para suas emergências.</p>
-                </div>
-                <div class="diferencial-item">
-                    <div class="diferencial-icon">🎓</div>
-                    <h4>Profissionais Certificados</h4>
-                    <p>Equipe altamente qualificada com certificações técnicas e experiência comprovada.</p>
-                </div>
-                <div class="diferencial-item">
-                    <div class="diferencial-icon">🛡️</div>
-                    <h4>Segurança Garantida</h4>
-                    <p>Todos os serviços seguem rigorosamente as normas de segurança e regulamentações técnicas.</p>
-                </div>
-                <div class="diferencial-item">
-                    <div class="diferencial-icon">💰</div>
-                    <h4>Preços Competitivos</h4>
-                    <p>Orçamentos transparentes e justos, sem surpresas ao final do serviço.</p>
-                </div>
-                <div class="diferencial-item">
-                    <div class="diferencial-icon">⚡</div>
-                    <h4>Tecnologia Moderna</h4>
-                    <p>Equipamentos de última geração para diagnósticos precisos e soluções eficientes.</p>
-                </div>
-                <div class="diferencial-item">
-                    <div class="diferencial-icon">✨</div>
-                    <h4>Garantia de Qualidade</h4>
-                    <p>Garantia em todos os serviços e comprometimento total com sua satisfação.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- GALERIA -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Galeria de Projetos</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <p>📸</p>
-                        <p style="font-size: 14px;">Painel Industrial</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <p>📸</p>
-                        <p style="font-size: 14px;">Instalação Residencial</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <p>📸</p>
-                        <p style="font-size: 14px;">Manutenção Preventiva</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <p>📸</p>
-                        <p style="font-size: 14px;">Projeto Customizado</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <p>📸</p>
-                        <p style="font-size: 14px;">Reforma Elétrica</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <p>📸</p>
-                        <p style="font-size: 14px;">Certificação</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CONTATO -->
-    <section class="section contato">
-        <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <div class="contact-item-icon">☎️</div>
-                    <h4>Telefone</h4>
-                    <p><a href="tel:+5561981214135">(61) 98121-4135</a></p>
-                    <p style="font-size: 12px; margin-top: 10px;">Atendimento 24h</p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-item-icon">💬</div>
-                    <h4>WhatsApp</h4>
-                    <p><a href="https://wa.me/5561981214135">(61) 98121-4135</a></p>
-                    <p style="font-size: 12px; margin-top: 10px;">Resposta rápida</p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-item-icon">📍</div>
-                    <h4>Localização</h4>
-                    <p>Luziânia - DF</p>
-                    <p style="font-size: 12px; margin-top: 10px;">Atendimento em toda região</p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-item-icon">📱</div>
-                    <h4>Redes Sociais</h4>
-                    <p><a href="https://instagram.com/msmanutencao" target="_blank">@msmanutencao</a></p>
-                    <p style="font-size: 12px; margin-top: 10px;">Siga-nos no Instagram</p>
-                </div>
-            </div>
-            <a href="https://wa.me/5561981214135?text=Olá%20MS%20Manutenção!%20Gostaria%20de%20solicitar%20um%20orçamento." class="btn-hero btn-primary" style="margin-top: 20px;">💬 Solicitar Orçamento Agora</a>
-        </div>
-    </section>
-    
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h5>Empresa</h5>
-                    <p><strong>MS Manutenção Residencial e Industrial</strong></p>
-                    <p>CNPJ: 56.964.600/0001-24</p>
-                    <p>Localização: Luziânia - DF</p>
-                </div>
-                <div class="footer-section">
-                    <h5>Contato</h5>
-                    <p>📞 (61) 98121-4135</p>
-                    <p>💬 WhatsApp: (61) 98121-4135</p>
-                    <p>⏰ Atendimento 24 horas</p>
-                </div>
-                <div class="footer-section">
-                    <h5>Redes Sociais</h5>
-                    <div class="social-links">
-                        <a href="https://instagram.com/msmanutencao" target="_blank" class="social-link" title="Instagram">📷</a>
-                        <a href="https://wa.me/5561981214135" class="social-link" title="WhatsApp">💬</a>
-                        <a href="tel:+5561981214135" class="social-link" title="Telefone">☎️</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 MS Manutenção. Todos os direitos reservados. | Desenvolvido para máxima conversão em Google Ads</p>
-                <p style="margin-top: 10px; font-size: 11px;">CNPJ: 56.964.600/0001-24 | Responsável Técnico | Luziânia - DF</p>
-            </div>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-gray-900 text-white py-12 px-4 text-center">
+        <div class="container mx-auto">
+            <p class="font-black text-lg mb-2 uppercase">MS Manutenção Residencial e Industrial</p>
+            <p class="text-gray-400 text-sm mb-4">CNPJ: 56.964.600/0001-24</p>
+            
+            <!-- LINK INSTAGRAM -->
+            <a href="https://instagram.com" target="_blank" class="inline-flex items-center text-ms-orange font-bold hover:underline mb-6">
+                <i class="fab fa-instagram mr-2 text-xl"></i> @msmanutencaoresidencial
+            </a>
+            
+            <div class="h-px bg-gray-800 w-full mb-6"></div>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest italic">Responsável Técnico: Rodrigo Xavier dos Santos - CREA 06870181616</p>
         </div>
     </footer>
+
+    <!-- BOTAO WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-50 animate-bounce">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
 </body>
 </html>
