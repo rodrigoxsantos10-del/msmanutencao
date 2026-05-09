@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS Manutenção - Residencial e Industrial | Brasília</title>
+    <meta name="description" content="MS Manutenção oferece serviços de manutenção residencial e industrial em Brasília. Profissionais qualificados, atendimento rápido e garantia de qualidade.">
+    <meta name="keywords" content="manutenção residencial, manutenção industrial, Brasília, serviços de manutenção">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            background: #FFD600;
+            color: #1e3c72;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 14px;
+        }
+        
+        .phone-btn {
+            background: #FFD600;
+            color: #1e3c72;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .phone-btn:hover {
+            background: #FFC700;
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #FFD600;
+            color: #1e3c72;
+        }
+        
+        .btn-primary:hover {
+            background: #FFC700;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 214, 0, 0.3);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #1e3c72;
+        }
+        
+        .btn-secondary:hover {
+            background: #f0f0f0;
+            transform: translateY(-3px);
+        }
+        
+        .section {
+            padding: 80px 20px;
+            background: white;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            color: #1e3c72;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #FFD600;
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #FFD600;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .service-card h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .service-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .why-us {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .benefit-icon {
+            font-size: 30px;
+            min-width: 50px;
+            height: 50px;
+            background: #FFD600;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e3c72;
+        }
+        
+        .benefit h4 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+        
+        .benefit p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .contact-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-item-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        footer {
+            background: #0f1f3c;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #FFD600;
+        }
+        
+        .stars {
+            color: #FFD600;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .testimonial p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            color: #1e3c72;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .header-contact {
+                flex-direction: column;
+                gap: 10px;
+                font-size: 12px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5561981214135?text=Olá%20MS%20Manutenção!%20Gostaria%20de%20solicitar%20um%20orçamento." class="whatsapp-float" title="Fale conosco no WhatsApp">💬</a>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">⚙️</div>
+                    <span>MS Manutenção</span>
+                </div>
+                <div class="header-contact">
+                    <span>📞 (61) 98121-4135</span>
+                    <a href="tel:+5561981214135" class="phone-btn">Ligar Agora</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Manutenção Profissional para Sua Casa e Indústria</h1>
+            <p>Soluções completas em manutenção residencial e industrial com qualidade garantida</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/5561981214135?text=Olá%20MS%20Manutenção!%20Gostaria%20de%20solicitar%20um%20orçamento." class="btn btn-primary">💬 Solicitar Orçamento</a>
+                <a href="tel:+5561981214135" class="btn btn-secondary">📞 Ligar Agora</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Serviços -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Manutenção Residencial</h3>
+                    <p>Reparos gerais, hidráulica, elétrica, pintura e reformas em sua residência com profissionais qualificados.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏭</div>
+                    <h3>Manutenção Industrial</h3>
+                    <p>Serviços especializados para indústrias, máquinas, equipamentos e infraestrutura com garantia de segurança.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Serviços Elétricos</h3>
+                    <p>Instalação, reparo e manutenção de sistemas elétricos residenciais e industriais.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <h3>Hidráulica</h3>
+                    <p>Conserto de vazamentos, instalação de canos e manutenção de sistemas hidráulicos.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Reparos Gerais</h3>
+                    <p>Diversos tipos de reparos e manutenção preventiva para sua tranquilidade.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Pintura e Acabamento</h3>
+                    <p>Serviços de pintura, limpeza e acabamento para residências e indústrias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Por que nos escolher -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Por Que Nos Escolher?</h2>
+            <div class="why-us">
+                <div class="benefit">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h4>Profissionais Qualificados</h4>
+                        <p>Equipe experiente e treinada em todos os tipos de manutenção.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h4>Atendimento Rápido</h4>
+                        <p>Resposta ágil às suas solicitações e agendamentos flexíveis.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h4>Preços Competitivos</h4>
+                        <p>Orçamentos justos e sem surpresas ao final do serviço.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h4>Garantia de Qualidade</h4>
+                        <p>Todos os serviços com garantia e comprometimento com a excelência.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h4>Disponibilidade 24/7</h4>
+                        <p>Atendimento para emergências a qualquer hora do dia ou noite.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h4>Materiais de Qualidade</h4>
+                        <p>Utilizamos apenas materiais de primeira linha em todos os serviços.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Depoimentos -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Excelente atendimento! Resolveram meu problema elétrico rápido e com profissionalismo."</p>
+                    <div class="testimonial-author">- João Silva</div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"A MS Manutenção é confiável. Sempre que preciso, eles vêm rápido e fazem um ótimo trabalho."</p>
+                    <div class="testimonial-author">- Maria Santos</div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Preços justos e qualidade garantida. Recomendo para todos os meus amigos!"</p>
+                    <div class="testimonial-author">- Carlos Oliveira</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contato -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Entre em Contato Conosco</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-item-icon">📞</div>
+                    <p>(61) 98121-4135</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">💬</div>
+                    <p>WhatsApp: (61) 98121-4135</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <p>Brasília - DF</p>
+                </div>
+            </div>
+            <a href="https://wa.me/5561981214135?text=Olá%20MS%20Manutenção!%20Gostaria%20de%20solicitar%20um%20orçamento." class="btn btn-primary">Solicitar Orçamento Agora</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 MS Manutenção Residencial e Industrial. Todos os direitos reservados.</p>
+            <p>Desenvolvido para maximizar suas conversões no Google Ads</p>
+        </div>
+    </footer>
+</body>
+</html>
