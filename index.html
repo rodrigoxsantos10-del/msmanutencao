@@ -204,6 +204,14 @@
             * { transition: none !important; }
         }
     </style>
+    <!-- Google tag (gtag.js) - Google Ads AW-11471703423 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11471703423"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-11471703423');
+    </script>
 </head>
 <body>
 
@@ -411,5 +419,18 @@
         </div>
     </footer>
 
+    <!-- Rastreamento de conversões: cliques no WhatsApp e no botão de ligar -->
+    <script>
+        document.addEventListener('click', function (e) {
+            var a = e.target.closest ? e.target.closest('a[href]') : null;
+            if (!a || typeof gtag !== 'function') return;
+            var href = a.getAttribute('href') || '';
+            if (href.indexOf('https://wa.me/') === 0) {
+                gtag('event', 'conversion', {'send_to': 'AW-11471703423/no1fCM-0yZIdEP-akd4q'});
+            } else if (href.indexOf('tel:') === 0) {
+                gtag('event', 'conversion', {'send_to': 'AW-11471703423/o9v9CNK0yZIdEP-akd4q'});
+            }
+        }, true);
+    </script>
 </body>
 </html>
