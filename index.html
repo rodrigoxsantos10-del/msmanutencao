@@ -533,7 +533,7 @@
     btn.disabled=true; st.textContent='Enviando...';
     var c=new AbortController(), t=setTimeout(function(){c.abort()},8000);
     (WEBHOOK.indexOf('https://')===0?fetch(WEBHOOK,{method:'POST',mode:'no-cors',body:p,signal:c.signal}):Promise.reject())
-      .then(function(){st.textContent='Recebemos sua solicitação. Em breve entraremos em contato.';f.reset();})
+      .then(function(){st.textContent='Recebemos sua solicitação. Em breve entraremos em contato.';f.reset();if(typeof gtag==='function')gtag('event','conversion',{'send_to':'AW-11471703423/8kKYCIWuragdEP-akd4q'});})
       .catch(function(){
         st.textContent='Não foi possível enviar. Abrindo o WhatsApp para você.';
         window.open('https://wa.me/'+ZAP+'?text='+encodeURIComponent('Olá, quero um orçamento: '+f.tipo_servico.value+' em '+f.cidade.value),'_blank');
