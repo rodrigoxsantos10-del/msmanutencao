@@ -222,6 +222,11 @@
             html { scroll-behavior: auto; }
             * { transition: none !important; }
         }
+        /* ---------- Galeria de trabalhos ---------- */
+        .galeria { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+        .galeria figure { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; }
+        .galeria img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
+        .galeria figcaption { padding: 10px 12px; font-size: .9rem; color: var(--texto-suave); }
     </style>
     <!-- Google tag (gtag.js) - Google Ads AW-11471703423 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11471703423"></script>
@@ -467,6 +472,34 @@
         </section>
 
         <!-- CONTATO FINAL -->
+        <section class="secao" aria-labelledby="s-trabalhos">
+            <div class="secao-miolo">
+                <div class="secao-titulo"><h2 class="section-title" id="s-trabalhos">Trabalhos realizados</h2></div>
+                <div class="galeria">
+                    <figure>
+                        <img src="fotos/quadro-distribuicao-380v.jpg" alt="Quadro de distribuição trifásico 380 V com disjuntores identificados por circuito (C01 a C16) e aterramento" width="1018" height="1356" loading="lazy" decoding="async">
+                        <figcaption>Quadro de distribuição 380 V, circuitos identificados</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="fotos/iluminacao-led-perfil-forro.jpg" alt="Fita de LED em perfil embutido no forro de sala comercial com divisórias de vidro" width="1201" height="1600" loading="lazy" decoding="async">
+                        <figcaption>Iluminação em LED no forro</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="fotos/iluminacao-led-divisorias-vidro.jpg" alt="Iluminação em LED e spots embutidos em ambiente comercial com divisórias de vidro e esquadrias pretas" width="1201" height="1600" loading="lazy" decoding="async">
+                        <figcaption>LED e spots em ambiente comercial</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="fotos/spots-embutidos-parede.jpg" alt="Spots de luz embutidos no forro iluminando parede revestida, com pontos de tomada e interruptores instalados" width="1201" height="1600" loading="lazy" decoding="async">
+                        <figcaption>Spots embutidos e pontos de tomada</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="fotos/nicho-fita-led-jardim.jpg" alt="Nicho de madeira em jardim com fita de LED embutida e arandelas de parede ao fundo" width="1201" height="1600" loading="lazy" decoding="async">
+                        <figcaption>Fita de LED em nicho e arandelas externas</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
         <section class="secao secao-residencial" aria-labelledby="s-areas">
             <div class="secao-miolo">
                 <div class="secao-titulo"><h2 class="section-title" id="s-areas">Onde atendemos</h2></div>
