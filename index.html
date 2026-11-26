@@ -546,7 +546,7 @@
   <div class="msf-box">
     <h2 id="msf-titulo">Fale direto com o eletricista</h2>
     <div class="msf-direto">
-      <a class="msf-btn msf-zap" href="https://wa.me/5561981214135?text=Ol%C3%A1!%20Vim%20pelo%20Google%20e%20preciso%20de%20um%20eletricista.">💬 Chamar no WhatsApp</a>
+      <a class="msf-btn msf-zap" href="https://wa.me/5561981214135?text=Ol%C3%A1!%20Vim%20pelo%20Google%20e%20preciso%20de%20um%20eletricista." target="_blank" rel="noopener">💬 Chamar no WhatsApp</a>
       <a class="msf-btn msf-tel" href="tel:+5561981214135">📞 Ligar agora: (61) 98121-4135</a>
       <p class="msf-obs">Atendimento todos os dias, das 7h às 20h · Luziânia e região</p>
     </div>
@@ -645,9 +645,9 @@
             if (!a || typeof gtag !== 'function') return;
             var href = a.getAttribute('href') || '';
             if (href.indexOf('https://wa.me/') === 0) {
-                gtag('event', 'conversion', {'send_to': 'AW-11471703423/no1fCM-0yZIdEP-akd4q'});
+                gtag('event', 'conversion', {'send_to': 'AW-11471703423/no1fCM-0yZIdEP-akd4q', 'transport_type': 'beacon'});
             } else if (href.indexOf('tel:') === 0) {
-                gtag('event', 'conversion', {'send_to': 'AW-11471703423/o9v9CNK0yZIdEP-akd4q'});
+                gtag('event', 'conversion', {'send_to': 'AW-11471703423/o9v9CNK0yZIdEP-akd4q', 'transport_type': 'beacon'});
             }
         }, true);
     </script>
