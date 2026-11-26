@@ -544,7 +544,13 @@
 
 <section id="msf-solicitar-orcamento" class="msf" aria-labelledby="msf-titulo">
   <div class="msf-box">
-    <h2 id="msf-titulo">Solicitar Orçamento Técnico</h2>
+    <h2 id="msf-titulo">Fale direto com o eletricista</h2>
+    <div class="msf-direto">
+      <a class="msf-btn msf-zap" href="https://wa.me/5561981214135?text=Ol%C3%A1!%20Vim%20pelo%20Google%20e%20preciso%20de%20um%20eletricista.">💬 Chamar no WhatsApp</a>
+      <a class="msf-btn msf-tel" href="tel:+5561981214135">📞 Ligar agora: (61) 98121-4135</a>
+      <p class="msf-obs">Atendimento todos os dias, das 7h às 20h · Luziânia e região</p>
+    </div>
+    <p class="msf-ou">Prefere que a gente te chame? Deixe seu contato:</p>
     <form id="msf-form" novalidate>
       <input type="text" name="empresa_site" class="msf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label>Nome<input name="nome" required autocomplete="name"></label>
@@ -574,6 +580,12 @@
 .msf button{width:100%;padding:12px;border:0;border-radius:8px;background:var(--grafite);color:#fff;font:inherit;cursor:pointer}
 .msf button[disabled]{opacity:.6;cursor:wait}
 .msf-hp{position:absolute;left:-9999px}
+.msf-direto{display:flex;flex-direction:column;gap:12px;margin:0 0 18px}
+.msf-btn{display:block;text-align:center;padding:16px;border-radius:10px;font-weight:700;font-size:1.1rem;text-decoration:none;color:#fff}
+.msf-zap{background:#1FA855}
+.msf-tel{background:#F45A1C}
+.msf-obs{margin:0;font-size:.85rem;text-align:center;color:var(--texto-suave)}
+.msf-ou{font-size:.9rem;margin:0 0 10px;color:var(--texto-suave)}
 </style>
 <script>
 (function(){
